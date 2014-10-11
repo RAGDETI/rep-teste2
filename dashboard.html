@@ -1,0 +1,289 @@
+<html>
+<head>
+	<title>Férias fácil: Sistema de solicitação de férias</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
+
+	<style type="text/css">
+		body{
+			font-family: sans-serif;
+		}
+		#timeline-dashboard{
+			border-left:1px solid #fff;
+			position: absolute;
+			width:1200px;
+			margin:10px;
+			display: table;
+			height: auto;
+			margin:30px;
+		}
+		#current-day{
+			text-align: center;
+			width: 90px;
+			height: 100%;
+			position: absolute;
+			margin-top: -35px;
+			margin-left: -47px;
+			left:857px;
+			clear:both;
+		}
+		#current-day div#date{
+			border-bottom: 7px solid #009999;
+			padding: 5px 5px 0 5px;
+			background-color: #fff;
+			font-size:1em;
+			color: gray;
+			height:20px;
+			display: inline-block;
+
+		}
+		#current-day-line{
+			border-left: 1px solid #C8C8C8;
+			border-right: 1px solid #C8C8C8;
+			display: block;
+			width: 1px;
+			height: 105%;/*Altura multipla da timeline - controlada por javascript*/
+			position: absolute;
+			left: 50%;
+		}
+
+		.months{
+			position: absolute;
+			height: 100%;
+		}
+		.month{
+			float:left;
+			width:99px;
+			text-align: center;
+			height: 100%;
+			border-right: 1px solid #fff;
+			background-color: #f0f0f0;
+			color:#D8D8D8;
+			padding-top: 20px;
+		}
+		.month span{
+		}
+		.employee{
+			background-color: black;
+			height: 63px;
+			opacity: 0.55;
+		}
+		.employee img{
+			float:left;
+			margin-right: 10px;
+		}
+		.employee-data{
+			padding:7px;
+			font-size: 0.9em;
+			color:#fff;
+		}
+		.employee .option{
+			position: absolute;
+			right:10px;
+
+		}
+		.employee .option ul li{
+			display: inline-block;
+			color:#fff;
+		}
+		.timelines{
+			padding-top:60px;
+			position: relative; 
+		}
+		.timeline{
+			/*border:1px solid red;*/
+		}
+		.line{
+			width: 100%;
+			height: 10px;
+			background-color: #009999;
+			border:1px solid #009999;
+			margin:0 auto;
+			opacity: 0.7;
+    		filter: alpha(opacity=70); /* For IE8 and earlier */
+
+		}
+		.period{
+			position: absolute;
+			left:50px;
+			margin-top:-16px;
+			margin-left:-2px;
+			width: 33px;
+			height: 18px;
+			border-radius: 8px;
+			background-color: red;
+			border:1px solid red;
+			opacity: 0.9;
+    		filter: alpha(opacity=90); /* For IE8 and earlier */
+		}
+		.period-2{
+			position: absolute;
+			left:300px;
+			margin-top:-16px;
+			margin-left:-2px;
+			width: 33px;
+			height: 18px;
+			border-radius: 8px;
+			background-color: red;
+			border:1px solid red;
+			opacity: 0.9;
+    		filter: alpha(opacity=90); /* For IE8 and earlier */
+		}
+		.period-3{
+			position: absolute;
+			left:700px;
+			margin-top:-16px;
+			margin-left:-2px;
+			width: 33px;
+			height: 18px;
+			border-radius: 8px;
+			background-color: red;
+			border:1px solid red;
+			opacity: 0.9;
+    		filter: alpha(opacity=90); /* For IE8 and earlier */
+		}
+		.period .detail{
+			background-color: pink;
+			position: absolute;
+			top:25px;
+			padding:10px;
+			font-size:0.8em;
+			width:150px;
+			height: 24px;	
+		}
+
+
+		span.box-hook {
+			width:22px;
+			height:22px;
+			background-color: pink;
+			display: block;
+			transform:rotate(45deg);
+			position: absolute;
+			top:-7px;
+			z-index: 1;
+		}
+		span.box-content{
+			background-color: pink;
+			z-index: 2;
+			position: absolute;
+
+		}
+
+
+	</style>
+</head>
+<body>
+
+
+
+<div id="timeline-dashboard">
+	<div class="months">
+		<div class="month"><span>jan</span></div>
+		<div class="month"><span>fev</span></div>
+		<div class="month"><span>mar</span></div>
+		<div class="month"><span>abr</span></div>
+		<div class="month"><span>mai</span></div>
+		<div class="month"><span>jun</span></div>
+		<div class="month"><span>jul</span></div>
+		<div class="month"><span>ago</span></div>
+		<div class="month"><span>set</span></div>
+		<div class="month"><span>out</span></div>
+		<div class="month"><span>nov</span></div>
+		<div class="month"><span>dez</span></div>
+	</div>
+
+	<div id="current-day">
+		<div id="date">17/09/2014</div>
+		<div id="current-day-line"></div>
+	</div>
+	
+	<div class="timelines">
+		<div class="timeline">
+			<div class="employee">
+				<img src="img/p1.png" width="70px" alt="Fotografia do empregado" />
+				<div class="employee-data">
+					Tarcísio Freire
+				</div>
+				<div class="option">
+					<ul>
+						<li>Item 1</li>
+						<li>Item 2</li>
+						<li>Item 3</li>
+					</ul>
+				</div>
+			</div>
+			<div class="line"></div>
+			<div class="period">
+				<div class="detail">
+					<span class="box-hook"></span>
+					<span class="box-content">
+						10 dias <br />
+						10/08/2014 - 20/08/2014
+					</span>
+				</div>
+			</div>
+			<div class="period-2"></div>
+			<div class="period-3"></div>
+		</div>
+	</div>
+	
+	<div class="timelines">
+		<div class="timeline">
+			<div class="employee">
+				<img src="img/p1.png" width="70px" alt="Fotografia do empregado" />
+				<div class="employee-data">
+					Edgar Batista
+				</div>
+			</div>
+			<div class="option"></div>
+			<div class="line"></div>
+			<div class="period-1"></div>
+		</div>
+	</div>
+	
+	<div class="timelines">
+		<div class="timeline">
+			<div class="employee">
+				<img src="img/p1.png" width="70px" alt="Fotografia do empregado" />
+				<div class="employee-data">
+					Fernanda Freire
+				</div>
+			</div>
+			<div class="option"></div>
+			<div class="line"></div>
+			<div class="period-1"></div>
+		</div>
+	</div>
+		
+	<div class="timelines">
+		<div class="timeline">
+			<div class="employee">
+				<img src="img/p1.png" width="70px" alt="Fotografia do empregado" />
+				<div class="employee-data">
+					Edgar Batista
+				</div>
+			</div>
+			<div class="option"></div>
+			<div class="line"></div>
+			<div class="period-1"></div>
+		</div>
+	</div>
+	
+	<div class="timelines">
+		<div class="timeline">
+			<div class="employee">
+				<img src="img/p1.png" width="70px" alt="Fotografia do empregado" />
+				<div class="employee-data">
+					Fernanda Freire
+				</div>
+			</div>
+			<div class="option"></div>
+			<div class="line"></div>
+			<div class="period-1"></div>
+		</div>
+	</div>
+</div>
+
+
+</body>
+</html>
